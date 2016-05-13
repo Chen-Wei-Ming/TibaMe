@@ -1,0 +1,25 @@
+main.swift進入點
+import仔入framework
+foundation可以提供基本功能
+println為基本輸出
+alt+mos-left可以查詢基本資訊
+
+//變數
+let = final 不改
+var可以修改
+宣告方式： let or var / varname : class = value
+可以觀察變數變化console的左下auto -> all variable
+
+println int
+String(int) -> parseint
+"string \(int)"
+
+//Array
+var array = [vara , varb]
+array[0] = vara
+array[1] = varb
+var numberArray:Array = [value1 , value2] ;
+
+var numberDic:Dictionary = ["Name1":value1 ,"Name2":value2] ;
+println(numberDic["Name1"])) = Optional:value1
+println(numberDic["Name1"])!) = value1

@@ -1,0 +1,27 @@
+//function
+func printtext(){
+	println("Hello world") ;
+}
+func printtext2()->String {
+	return "test" ;
+}
+
+//多輸入
+func practice2(name :String , int age)->String{
+	return "\(name) is \(age) years"
+}
+
+//多輸出
+func getGasprices()->(var1:UInt32 , var2:UInt32 , var 3:UInt32){
+	return(arc4random()%10+1 , arc4random()%10+1 , arc4random(0%10+1)) 
+}
+println("\(returnObject.var1), \(returnObject.var2) , \(returnObject.var3)")
+
+//不定參數
+func sumOf(numbers:Int...)->int{
+	var sum = 0 ;
+	for number in numbers{
+		sum+= number ;
+	}
+	return sum
+}

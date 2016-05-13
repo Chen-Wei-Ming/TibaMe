@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Lesson 2</title>
+	</head>
+	<body onload='setInterval(updateProgress , 500)'>
+		<form action="#" id="practice1">
+			<input type="email">
+			<input type="submit">
+		</form>
+		<form action="#" id="practice2">
+			<input type="url">
+			<input type="submit">
+		</form>
+		<form action="#" id="practice3">
+			<input type="number" min="1" max="10" step="1">
+			<input type="submit">
+		</form>
+		<form action="#" id="practice4">
+			<input id='myrange' onchange='changevalue()' type="range" min="1" max='10' step='1' value='1'>
+			<input type="submit">
+			<span id='myspan'></span>
+		</form>
+		<form action="#" id='practice5'>
+			<input type="date">
+			<input type="submit">
+		</form>
+		<form action="#" id='practice6'>
+			<input type="color">
+			<input type="submit">
+		</form>
+		<progress id='practice7' value='10' max='100' ></progress>
+		<meter id='practice8' value='0' min='0' max='100' low='10' high='60'></meter>
+		<form action="#" id='practice9'>
+			<input type="text" placeholder='Place Input Your Name'>
+			<input type="submit">
+		</form>
+		<script>
+			function changevalue(){
+				document.getElementById('myspan').innerHTML = document.getElementById('myrange').value ;
+			}
+			function updateProgress(){
+				document.getElementById('practice7').value += 10 ;
+				document.getElementById('practice8').value += 10 ;
+			}
+		</script>
+	</body>
+</html>

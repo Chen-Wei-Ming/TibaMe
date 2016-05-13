@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<title>Lesson 2-2</title>
+	</head>
+	<body>
+		<video id='practice1' controls src="put your video src" width='320' height='240'></video>
+		<input id='Button_videoPlay' type="button" value='Play' onclick='VideoPlay()'>
+		<input id='Button_videoFullScreen' type="button" value='FullScreen' onclick='VideoFullScreen()'>
+		<audio id='practice2' controls src="put your audio src"></audio>
+		<div>
+			<span id="timeDisplay"></span>
+			<span id="voulmeDisplay"></span>
+		</div>
+		<div>
+			<input type="button" value="+">
+			<input type="button" value="-">
+		</div>
+		<input type="range" id="progressSlider" min ="0" value="0">
+		<script>
+		var myvideo = document.getElementById('practice1') ;
+		var Button_videoPlay = document.getElementById('Button_videoPlay') ;
+		var timeDisplay = doucmetn.getElementById("timeDisplay") ;
+		var voulmeDisplay = doucmetn.getElementById("voulmeDisplay") ;
+		var progressSlider = doucmetn.getElementById("progressSlider") ;
+
+			function VideoPlay(){
+				if(myvideo.paused){
+					myvideo.play() ;
+					Button_videoPlay.value = 'Pause' ;
+				}
+				else{
+					myvideo.pause() ;
+					Button_videoPlay.value = 'Play' ;
+				}
+				progressSlider.max = myvideo.duration ;
+				voulmeDisplay.innerHTML = "音量"+myvideo.volume.toFixed(2) ;
+				myvideo.addEventListener("timeupdate" , updateProgress) ;
+			}
+			function VideoFullScreen(){
+				myvideo.webkitEnterFullscreen() ;
+			}
+			function updateProgress(){
+				timeDiplay.innerHTML = Math.floor(myvideo.currentTime)+"/"+Math.floor(myvideo.duration) ;
+				progressSlider.value = myvideo.currentTime ;
+			}
+			function addVoulume(){
+				if(myvideo.volume == 1){
+
+				}else if(myvideo.voulme >= 0.9){
+					myvideo.voulme = 1 ;
+				}else{
+					myvideo.voulme += 0.1 ;
+				}
+				oulmeDisplay.innerHTML = "音量"+myvideo.volume.toFi
+			}
+			function subVoulume(){
+				if(myvideo.volume == 0){
+
+				}else if(myvideo.voulme <= 0.1){
+					myvideo.voulme = 0 ;
+				}else{
+					myvideo.voulme -= 0.1 ;
+				}
+				oulmeDisplay.innerHTML = "音量"+myvideo.volume.toFi
+			}
+		</script>
+	</body>
+</html>

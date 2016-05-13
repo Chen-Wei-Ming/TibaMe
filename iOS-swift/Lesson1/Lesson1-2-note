@@ -1,0 +1,33 @@
+//控制流程
+for(var i = 1 ; i <= 10 ; i+=){
+	println(i) ;
+}
+=> for i in 1...10{
+	println(i) ;
+}
+
+var studentScores = [
+	"Name1":value1,
+	"Name2":value2,
+	"Name3":value3,
+] 
+
+for score in studentScores(Dictionary){
+	if(score.1 < 60){
+		println(score.0) ;
+	}
+}
+score.1 = value ;
+score.0 = name ;
+
+var studentGender = [
+	["Name" :"Name1" ,"Sex" :"m"] ,
+	["Name" :"Name2" ,"Sex" :"m"] ,
+	["Name" :"Name3" ,"Sex" :"f"] ,
+	["Name" :"Name4" ,"Sex" :"f"] ,
+]
+for person in studentGender{
+	if(person["Sex"] == "f"){
+		println(person["Name"]!) ;
+	}
+}

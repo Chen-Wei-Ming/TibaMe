@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Lesson2-4</title>
+		<style>
+			div{
+				width:300px;
+				height:100px;
+				padding: 10px;
+				background-color: blue;
+				color:white;
+				font-size:24px;
+			}
+		</style>
+		<script>
+			window.onload = function(){
+				myDiv.addEventListener('dragenter' , dragenterHandler) ;
+				myDiv.addEventListener('dragleave' , dragleaveHandler) ;
+				myDiv.addEventListener('dragover' , dragoverHandler) ;
+				myDiv.addEventListener('drop' , dropHandler) ;
+			}
+			function dragenterHandler(e){
+				myDiv.style.backgroundColor ='red' ;
+				myDiv.innerHTML = 'Drop it' ;
+			}
+			function dragleaveHandler(e){
+					myDiv.style.backgroundColor ='blue' ;
+				myDiv.innerHTML = 'Come here' ;
+			}
+			function dragoverHandler(e){
+				e.preventDefault() ;
+			}
+			function dropHandler(e){
+				e.preventDefault() ;
+				var files = e.dataTransfer.files ;
+				if(files.length == 0){
+					return false ;
+				}
+				convert(files[0]) ;
+			}
+			function convert(file){
+				if(!file.type.match(/text.*/)){
+					alert("Not text file!!") ;
+					return false ;
+				}
+				var reader = new FileReader() ;
+				reader.onloadend = function(){
+					var context = reader.result ;
+					context = context.replace(/Text/g,"textString") ;
+					myTextarea.innerHTML = "原文：\n"+reader.result+"\n---\n翻譯：\n"+context ;
+				}
+				reader.readAsText(file) ;
+			}
+		</script>
+	</head>
+	<body>
+		<div id='myDiv'>Come here.</div>
+		<br>
+		<textarea name="" id="myTextarea" cols="50" rows="10"></textarea>
+		<script type="text/javascript">
+			var myDiv = document.getElementById('myDiv') ;
+			var myTextarea = document.getElementById('myTextarea') ;
+		</script>
+	</body>
+</html>
